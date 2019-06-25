@@ -9,7 +9,6 @@ public class EmployeeJoinedCompanyEvent {
 	private final String surname;
 	private final String gender;
 	private final LocalDate dateOfBirth;
-	private final Integer index;
 	private final String companyId;
 	private final String city;
 	private final String streetAddress;
@@ -18,7 +17,7 @@ public class EmployeeJoinedCompanyEvent {
 	private final String email;
 	
 	public EmployeeJoinedCompanyEvent(String id, String givenName, String surname, String gender, LocalDate dateOfBirth,
-			Integer index, String companyId, String city, String streetAddress, String postalCode, String iban,
+			String companyId, String city, String streetAddress, String postalCode, String iban,
 			String email) {
 		super();
 		this.id = id;
@@ -26,7 +25,6 @@ public class EmployeeJoinedCompanyEvent {
 		this.surname = surname;
 		this.gender = gender;
 		this.dateOfBirth = dateOfBirth;
-		this.index = index;
 		this.companyId = companyId;
 		this.city = city;
 		this.streetAddress = streetAddress;
@@ -53,10 +51,6 @@ public class EmployeeJoinedCompanyEvent {
 
 	public LocalDate getDateOfBirth() {
 		return dateOfBirth;
-	}
-
-	public Integer getIndex() {
-		return index;
 	}
 
 	public String getCompanyId() {
@@ -95,7 +89,6 @@ public class EmployeeJoinedCompanyEvent {
 		result = prime * result + ((givenName == null) ? 0 : givenName.hashCode());
 		result = prime * result + ((iban == null) ? 0 : iban.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((index == null) ? 0 : index.hashCode());
 		result = prime * result + ((postalCode == null) ? 0 : postalCode.hashCode());
 		result = prime * result + ((streetAddress == null) ? 0 : streetAddress.hashCode());
 		result = prime * result + ((surname == null) ? 0 : surname.hashCode());
@@ -103,83 +96,11 @@ public class EmployeeJoinedCompanyEvent {
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		EmployeeJoinedCompanyEvent other = (EmployeeJoinedCompanyEvent) obj;
-		if (city == null) {
-			if (other.city != null)
-				return false;
-		} else if (!city.equals(other.city))
-			return false;
-		if (companyId == null) {
-			if (other.companyId != null)
-				return false;
-		} else if (!companyId.equals(other.companyId))
-			return false;
-		if (dateOfBirth == null) {
-			if (other.dateOfBirth != null)
-				return false;
-		} else if (!dateOfBirth.equals(other.dateOfBirth))
-			return false;
-		if (email == null) {
-			if (other.email != null)
-				return false;
-		} else if (!email.equals(other.email))
-			return false;
-		if (gender == null) {
-			if (other.gender != null)
-				return false;
-		} else if (!gender.equals(other.gender))
-			return false;
-		if (givenName == null) {
-			if (other.givenName != null)
-				return false;
-		} else if (!givenName.equals(other.givenName))
-			return false;
-		if (iban == null) {
-			if (other.iban != null)
-				return false;
-		} else if (!iban.equals(other.iban))
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		if (index == null) {
-			if (other.index != null)
-				return false;
-		} else if (!index.equals(other.index))
-			return false;
-		if (postalCode == null) {
-			if (other.postalCode != null)
-				return false;
-		} else if (!postalCode.equals(other.postalCode))
-			return false;
-		if (streetAddress == null) {
-			if (other.streetAddress != null)
-				return false;
-		} else if (!streetAddress.equals(other.streetAddress))
-			return false;
-		if (surname == null) {
-			if (other.surname != null)
-				return false;
-		} else if (!surname.equals(other.surname))
-			return false;
-		return true;
-	}
-
-	@Override
 	public String toString() {
-		return "EmployeeJoinedCompany [id=" + id + ", givenName=" + givenName + ", surname=" + surname + ", gender="
-				+ gender + ", dateOfBirth=" + dateOfBirth + ", index=" + index + ", companyId=" + companyId + ", city="
-				+ city + ", streetAddress=" + streetAddress + ", postalCode=" + postalCode + ", iban=" + iban
-				+ ", email=" + email + "]";
+		return "EmployeeJoinedCompanyEvent [id=" + id + ", givenName=" + givenName + ", surname=" + surname
+				+ ", gender=" + gender + ", dateOfBirth=" + dateOfBirth + ", companyId=" + companyId + ", city=" + city
+				+ ", streetAddress=" + streetAddress + ", postalCode=" + postalCode + ", iban=" + iban + ", email="
+				+ email + "]";
 	}
 
 	

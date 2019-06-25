@@ -22,15 +22,15 @@ public class EmployeeAggregate {
     public EmployeeAggregate(EmployeeJoinCompanyCommand command) {
     	id = command.getId();
         apply(new EmployeeJoinedCompanyEvent(command.getId(), command.getGivenName(), command.getSurname(), command.getGender(), command.getDateOfBirth(),
-        		command.getIndex(), command.getCompanyId(), command.getCity(), command.getStreetAddress(), command.getPostalCode(), command.getIban(),
+        		command.getCompanyId(), command.getCity(), command.getStreetAddress(), command.getPostalCode(), command.getIban(),
     			command.getEmail()));
     }
-    
+
     @EventSourcingHandler
-    public void on(EmployeeJoinedCompanyEvent command) {
-        id = command.getId();
+    public void on(EmployeeJoinedCompanyEvent event) {
+        id = event.getId();
     }
-    
+
     @CommandHandler
     public void handle(ChangeEmployeeAddressCommand command) {
         apply(new EmployeeAddressChangedEvent(command.getId(), command.getCity(), command.getStreetAddress(), command.getPostalCode()));

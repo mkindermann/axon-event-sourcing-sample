@@ -1,17 +1,15 @@
 package de.datev.axon.gui;
 
-import java.time.LocalDate;
 import java.util.List;
-import java.util.UUID;
 
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
 import org.axonframework.queryhandling.QueryGateway;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import de.datev.axon.coreapi.commands.ChangeEmployeeAddressCommand;
 import de.datev.axon.coreapi.commands.EmployeeJoinCompanyCommand;
 import de.datev.axon.coreapi.queries.Employee;
 import de.datev.axon.coreapi.queries.FindAllEmployeesQuery;
@@ -27,33 +25,19 @@ public class EmployeeRestEndpoint {
         this.queryGateway = queryGateway;
     }
 
+    public void publishCommands(@RequestBody List<String> commands) {
+    	//TODO iterate over json commands, unmarshal and send them
+    	
+    }
+    
     @PostMapping("/join-company")
-    public void joinCompany() {
-    	String id = UUID.randomUUID().toString();;
-    	String givenName = "givenName";
-    	String surname = "surname";
-    	String gender = "m";
-    	LocalDate dateOfBirth = LocalDate.now();
-    	Integer index = 0;
-    	String companyId = "companyId";
-    	String city = "city";
-    	String streetAddress = "streetAddress";
-    	String postalCode = "postalCode";
-    	String iban = "ibane";
-    	String email = "email";
-        
-        commandGateway.send(new EmployeeJoinCompanyCommand(id, givenName, surname, gender, dateOfBirth, index, companyId, city, streetAddress, postalCode, iban, email));
-        
+    public void joinCompany(@RequestBody EmployeeJoinCompanyCommand command) {
+        commandGateway.send(command);
     }
 
     @PostMapping("/change-address")
-    public void changeEmployeeAddress() {
-        String id = UUID.randomUUID().toString();
-    	String city = "city";
-    	String streetAddress = "streetAddress";
-    	String postalCode = "postalCode";
-    	
-        commandGateway.send(new ChangeEmployeeAddressCommand(id, city, streetAddress, postalCode));
+    public void changeEmployeeAddress(@RequestBody EmployeeJoinCompanyCommand command) {
+        commandGateway.send(command);
     }
 
     @GetMapping("/employees")

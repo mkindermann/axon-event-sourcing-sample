@@ -13,7 +13,7 @@ import de.datev.axon.coreapi.commands.EmployeeJoinCompanyCommand;
 import de.datev.axon.coreapi.events.EmployeeAddressChangedEvent;
 import de.datev.axon.coreapi.events.EmployeeJoinedCompanyEvent;
 
-public class OrderAggregateUnitTest {
+public class EmployeeAggregateUnitTest {
 
     private FixtureConfiguration<EmployeeAggregate> fixture;
 
@@ -29,7 +29,6 @@ public class OrderAggregateUnitTest {
     	String surname = "surname";
     	String gender = "m";
     	LocalDate dateOfBirth = LocalDate.now();
-    	Integer index = 0;
     	String companyId = "companyId";
     	String city = "city";
     	String streetAddress = "streetAddress";
@@ -38,8 +37,8 @@ public class OrderAggregateUnitTest {
     	String email = "email";
         
         fixture.givenNoPriorActivity()
-               .when(new EmployeeJoinCompanyCommand(id, givenName, surname, gender, dateOfBirth, index, companyId, city, streetAddress, postalCode, iban, email))
-               .expectEvents(new EmployeeJoinedCompanyEvent(id, givenName, surname, gender, dateOfBirth, index, companyId, city, streetAddress, postalCode, iban, email));
+               .when(new EmployeeJoinCompanyCommand(id, givenName, surname, gender, dateOfBirth, companyId, city, streetAddress, postalCode, iban, email))
+               .expectEvents(new EmployeeJoinedCompanyEvent(id, givenName, surname, gender, dateOfBirth, companyId, city, streetAddress, postalCode, iban, email));
     }
 
     @Test
@@ -49,7 +48,6 @@ public class OrderAggregateUnitTest {
     	String surname = "surname";
     	String gender = "m";
     	LocalDate dateOfBirth = LocalDate.now();
-    	Integer index = 0;
     	String companyId = "companyId";
     	String city = "city";
     	String streetAddress = "streetAddress";
@@ -59,7 +57,7 @@ public class OrderAggregateUnitTest {
     	
     	String changedStreetAddress = "new streetAddress";
 
-        fixture.given(new EmployeeJoinedCompanyEvent(id, givenName, surname, gender, dateOfBirth, index, companyId, city, streetAddress, postalCode, iban, email))
+        fixture.given(new EmployeeJoinedCompanyEvent(id, givenName, surname, gender, dateOfBirth, companyId, city, streetAddress, postalCode, iban, email))
                .when(new ChangeEmployeeAddressCommand(id, city, changedStreetAddress, postalCode))
                .expectEvents(new EmployeeAddressChangedEvent(id, city, changedStreetAddress, postalCode));
     }

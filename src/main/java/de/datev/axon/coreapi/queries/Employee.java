@@ -10,7 +10,6 @@ public class Employee {
 	private String surname;
 	private String gender;
 	private LocalDate dateOfBirth;
-	private Integer index;
 	private String companyId;
 	private String city;
 	private String streetAddress;
@@ -19,7 +18,7 @@ public class Employee {
 	private String email;
 	
 	public Employee(String id, String givenName, String surname, String gender,
-			LocalDate dateOfBirth, Integer index, String companyId, String city, String streetAddress,
+			LocalDate dateOfBirth, String companyId, String city, String streetAddress,
 			String postalCode, String iban, String email) {
 		super();
 		this.id = id;
@@ -27,7 +26,6 @@ public class Employee {
 		this.surname = surname;
 		this.gender = gender;
 		this.dateOfBirth = dateOfBirth;
-		this.index = index;
 		this.companyId = companyId;
 		this.city = city;
 		this.streetAddress = streetAddress;
@@ -83,14 +81,6 @@ public class Employee {
 
 	public void setDateOfBirth(LocalDate dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
-	}
-
-	public Integer getIndex() {
-		return index;
-	}
-
-	public void setIndex(Integer index) {
-		this.index = index;
 	}
 
 	public String getCompanyId() {
@@ -154,7 +144,6 @@ public class Employee {
 		result = prime * result + ((hireStatus == null) ? 0 : hireStatus.hashCode());
 		result = prime * result + ((iban == null) ? 0 : iban.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((index == null) ? 0 : index.hashCode());
 		result = prime * result + ((postalCode == null) ? 0 : postalCode.hashCode());
 		result = prime * result + ((streetAddress == null) ? 0 : streetAddress.hashCode());
 		result = prime * result + ((surname == null) ? 0 : surname.hashCode());
@@ -212,11 +201,6 @@ public class Employee {
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (index == null) {
-			if (other.index != null)
-				return false;
-		} else if (!index.equals(other.index))
-			return false;
 		if (postalCode == null) {
 			if (other.postalCode != null)
 				return false;
@@ -238,7 +222,7 @@ public class Employee {
 	@Override
 	public String toString() {
 		return "JoinedEmployee [id=" + id + ", hireStatus=" + hireStatus + ", givenName=" + givenName + ", surname="
-				+ surname + ", gender=" + gender + ", dateOfBirth=" + dateOfBirth + ", index=" + index + ", companyId="
+				+ surname + ", gender=" + gender + ", dateOfBirth=" + dateOfBirth + ", companyId="
 				+ companyId + ", city=" + city + ", streetAddress=" + streetAddress + ", postalCode=" + postalCode
 				+ ", iban=" + iban + ", email=" + email + "]";
 	}

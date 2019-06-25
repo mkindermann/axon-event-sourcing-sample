@@ -22,7 +22,7 @@ public class EmployeesEventHandler {
     @EventHandler
     public void on(EmployeeJoinedCompanyEvent event) {
         Employee employee = new Employee(event.getId(), event.getGivenName(), event.getSurname(), event.getGender(), 
-        	event.getDateOfBirth(), event.getIndex(), event.getCompanyId(), event.getCity(), event.getStreetAddress(), 
+        	event.getDateOfBirth(), event.getCompanyId(), event.getCity(), event.getStreetAddress(), 
         	event.getPostalCode(), event.getIban(), event.getEmail());
         employees.put(employee.getId(), employee);
     }
@@ -30,7 +30,6 @@ public class EmployeesEventHandler {
     @EventHandler
     public void on(EmployeeAddressChangedEvent event) {
     	employees.computeIfPresent(event.getId(), (id, employee) -> {
-    		
             employee.setCity(event.getCity());
             employee.setStreetAddress(event.getStreetAddress());
             employee.setPostalCode(event.getPostalCode());

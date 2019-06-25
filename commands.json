@@ -1,0 +1,18 @@
+
+  {
+    "command": "EmployeeJoinCompany",
+    "id": "43bdd2bf-432a-4b5d-b234-6de0512b4c11",
+    "payload": {
+      "givenName": "Elisabeth",
+      "surname": "Krüger",
+      "gender": "f",
+      "dateOfBirth": "1969-08-26",
+      "id": "43bdd2bf-432a-4b5d-b234-6de0512b4c11",
+      "companyId": "m-00000376",
+      "city": "Hamburg",
+      "streetAddress": "Heimerichstraße 11",
+      "postalCode": "22119",
+      "iban": "DE56095394891947254064",
+      "email": "elisabeth.krueger.0@yahoo.com"
+    }
+  }
