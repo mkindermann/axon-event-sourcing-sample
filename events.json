@@ -1,0 +1,79 @@
+[
+  {
+    "event": "EmployeeJoinedCompany",
+    "effectiveDateTime": "2017-01-01T00:00:00Z",
+    "payload": {
+      "givenName": "Elisabeth",
+      "surname": "Krüger",
+      "gender": "f",
+      "dateOfBirth": "1969-08-26",
+      "index": 0,
+      "id": "43bdd2bf-432a-4b5d-b234-6de0512b4c11",
+      "companyId": "m-00000376",
+      "city": "Hamburg",
+      "streetAddress": "Heimerichstraße 11",
+      "postalCode": "22119",
+      "iban": "DE56095394891947254064",
+      "email": "elisabeth.krueger.0@yahoo.com"
+    }
+  },
+  {
+    "event": "EmployeeAddressChanged",
+    "effectiveDateTime": "2017-03-01T00:00:00Z",
+    "payload": {
+      "id": "43bdd2bf-432a-4b5d-b234-6de0512b4c11",
+      "city": "Hamburg",
+      "streetAddress": "Heischbrook 20b",
+      "postalCode": "22081"
+    }
+  },
+  {
+    "event": "EmployeeNameChanged",
+    "effectiveDateTime": "2017-06-01T00:00:00Z",
+    "payload": {
+      "id": "43bdd2bf-432a-4b5d-b234-6de0512b4c11",
+      "surname": "Wagner"
+    }
+  },
+  {
+    "event": "EmployeeEmailAddressChanged",
+    "effectiveDateTime": "2017-07-01T00:00:00Z",
+    "payload": {
+      "id": "43bdd2bf-432a-4b5d-b234-6de0512b4c11",
+      "email": "elisabeth.1@wagner.com"
+    }
+  },
+  {
+    "event": "EmployeeBankAccountChanged",
+    "effectiveDateTime": "2017-06-01T00:00:00Z",
+    "payload": {
+      "id": "43bdd2bf-432a-4b5d-b234-6de0512b4c11",
+      "iban": "DE68323905142282578164"
+    }
+  },
+  {
+    "event": "EmployeeTransferredToDepartment",
+    "effectiveDateTime": "2017-12-01T00:00:00Z",
+    "payload": {
+      "id": "43bdd2bf-432a-4b5d-b234-6de0512b4c11",
+      "departmentId": "EM121"
+    }
+  },
+  {
+    "event": "EmployeeAddressChanged",
+    "effectiveDateTime": "2018-03-01T00:00:00Z",
+    "payload": {
+      "id": "43bdd2bf-432a-4b5d-b234-6de0512b4c11",
+      "city": "Kiel",
+      "streetAddress": "Heischbrook 20b",
+      "postalCode": "24103"
+    }
+  },
+  {
+    "event": "EmployeeLeftCompanyEvent",
+    "effectiveDateTime": "2018-06-01T00:00:00Z",
+    "payload": {
+      "id": "43bdd2bf-432a-4b5d-b234-6de0512b4c11"
+    }
+  }
+]

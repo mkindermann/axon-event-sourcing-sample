@@ -1,0 +1,11 @@
+POST http://localhost:8080/join-company
+
+###
+
+POST http://localhost:8080/change-address
+
+###
+
+GET http://localhost:8080/all-employees
+
+###
